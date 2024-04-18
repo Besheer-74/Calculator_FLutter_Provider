@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-enum Operator { Addition, Subtraction, Multiplication, Division, Percentage }
+enum Operator { addition, subtraction, multiplication, division, percentage }
 
 class CalculatorModel extends ChangeNotifier {
   String _display = "";
@@ -57,17 +57,17 @@ class CalculatorModel extends ChangeNotifier {
 
   void checkOpreator(String input) {
     if (input.contains('+')) {
-      _currentOperator = Operator.Addition;
+      _currentOperator = Operator.addition;
     } else if (input.contains("-")) {
-      _currentOperator = Operator.Subtraction;
+      _currentOperator = Operator.subtraction;
     } else if (input.contains("-")) {
-      _currentOperator = Operator.Subtraction;
+      _currentOperator = Operator.subtraction;
     } else if (input.contains("*")) {
-      _currentOperator = Operator.Multiplication;
+      _currentOperator = Operator.multiplication;
     } else if (input.contains("/")) {
-      _currentOperator = Operator.Division;
+      _currentOperator = Operator.division;
     } else if (input.contains("%")) {
-      _currentOperator = Operator.Percentage;
+      _currentOperator = Operator.percentage;
     } else {
       _currentOperator = null;
     }
@@ -94,19 +94,19 @@ class CalculatorModel extends ChangeNotifier {
   void calculate() {
     checkOpreator(_display);
     switch (_currentOperator) {
-      case Operator.Addition:
+      case Operator.addition:
         _result = _addOperation();
         break;
-      case Operator.Subtraction:
+      case Operator.subtraction:
         _result = _subtractOperation();
         break;
-      case Operator.Multiplication:
+      case Operator.multiplication:
         _result = _multiplyOperation();
         break;
-      case Operator.Division:
+      case Operator.division:
         _result = _divideOperation();
         break;
-      case Operator.Percentage:
+      case Operator.percentage:
         _result = _percentageOperation();
         break;
       default:
